@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+
+    <button md-raised-button (click)="login('google')">
+      <img width="30" src="google-logo.png" />Use My Google Account
+    </button>
+
+    {{ user | async | json }}
+
+<md-input [(ngModel)]="filter" placeholder="Search"></md-input>
+<md-card *ngFor="let contact of getFiltered()">
+  <div class="header">
+      <img [src]="contact.picture" />
+      <div class="words">
+          <md-card-title>{{contact.firstName}} {{contact.lastName}}</md-card-title>
+          <md-card-subtitle>{{contact.company}}</md-card-subtitle>
+      </div>
+  </div>
+  <md-card-content>{{contact.notes}}</md-card-content>
+</md-card>
+
+</div>
