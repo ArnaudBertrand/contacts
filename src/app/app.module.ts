@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material'
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './core.module';
+import {MaterialModule} from '@angular/material';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBgY0bNe2BcqCA2HymybVnWmEEo1_w1Dgk",
@@ -13,20 +12,20 @@ const firebaseConfig = {
   databaseURL: "https://contacts-a2837.firebaseio.com",
   storageBucket: "contacts-a2837.appspot.com",
   messagingSenderId: "1060950974043",
-}
+};
+
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig, {
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
     }),
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
