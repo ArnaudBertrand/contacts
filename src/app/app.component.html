@@ -4,7 +4,7 @@
       <img width="30" src="google-logo.png" />Use My Google Account
     </button>
 
-    {{ user | async | json }}
+<user-info [user]="user | async"></user-info>
 
 <md-input [(ngModel)]="filter" placeholder="Search"></md-input>
 <md-card *ngFor="let contact of getFiltered()">

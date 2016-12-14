@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material'
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBgY0bNe2BcqCA2HymybVnWmEEo1_w1Dgk",
@@ -16,7 +17,8 @@ const firebaseConfig = {
 }
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,

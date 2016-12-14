@@ -32,7 +32,7 @@ export class AppComponent {
   user;
 
   constructor(public af: AngularFire) {
-    this.user = this.af.auth;
+    this.user = this.af.auth.map(auth => auth.auth.providerData[0]);
   }
 
   getFiltered() {
