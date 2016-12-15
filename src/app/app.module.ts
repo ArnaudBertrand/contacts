@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
 
-import { AppComponent } from './app.component';
-import { CoreModule } from './core.module';
+import {AppComponent} from './app.component';
+import {CoreModule} from './core.module';
+import {AppRoutingModule} from './app.routing';
 import {MaterialModule} from '@angular/material';
 
 const firebaseConfig = {
@@ -26,6 +27,7 @@ const firebaseConfig = {
       method: AuthMethods.Popup,
     }),
     CoreModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
