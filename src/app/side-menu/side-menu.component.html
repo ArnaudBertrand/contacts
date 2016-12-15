@@ -1,0 +1,10 @@
+<h2>Menu</h2>
+{{ user | async | json }}
+
+<button md-raised-button (click)="login()">
+    <md-icon>power_settings_new</md-icon> Login with Google
+</button>
+
+<button md-raised-button (click)="logout()">
+    Logout
+</button>

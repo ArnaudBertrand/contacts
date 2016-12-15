@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AngularFire, AuthProviders } from 'angularfire2';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-search',
@@ -8,8 +6,6 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  title = 'MyContacts';
-
   contacts = [
     {
       firstName: 'John',
@@ -29,24 +25,10 @@ export class SearchComponent {
 
   filter = '';
 
-  user;
-
-  constructor(public af: AngularFire) {
-    this.user = this.af.auth;
-  }
-
   getFiltered() {
     if (!this.filter.length) {
       return this.contacts;
     }
     return this.contacts.filter(contact => contact.firstName.match(this.filter));
-  }
-
-  login() {
-    this.af.auth.login({provider: AuthProviders.Google});
-  }
-
-  logout() {
-    this.af.auth.login;
   }
 }

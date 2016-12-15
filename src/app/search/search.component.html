@@ -1,11 +1,4 @@
 <div class="container">
-
-  <button md-raised-button (click)="login('google')">
-    <img width="30" src="google-logo.png" />Use My Google Account
-  </button>
-
-  {{ user | async | json }}
-
   <md-input [(ngModel)]="filter" placeholder="Search"></md-input>
   <md-card *ngFor="let contact of getFiltered()">
     <div class="header">
@@ -17,6 +10,5 @@
     </div>
     <md-card-content>{{contact.notes}}</md-card-content>
   </md-card>
-
 </div>
 

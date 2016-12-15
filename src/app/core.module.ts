@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {AddContactModule} from './add-contact/add-contact.module';
-import {MenuModule} from './menu/menu.module';
+import {SideMenuModule} from './side-menu/side-menu.module';
 import {SearchModule} from './search/search.module';
 
 @NgModule({
   imports: [
     AddContactModule,
-    MenuModule,
+    SideMenuModule,
     SearchModule,
     HttpModule,
   ],
-  exports: [HttpModule, AddContactModule, MenuModule, SearchModule],
+  exports: [HttpModule, AddContactModule, SideMenuModule, SearchModule],
 })
 export class CoreModule { }
