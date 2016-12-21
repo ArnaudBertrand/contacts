@@ -11,9 +11,19 @@ img {
 
 .container {
   margin: 0 auto;
-  width: 400px;
+  max-width: 70%;
 }
 
 md-input {
   display: block;
+}
+
+md-card {
+  width: 40%;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

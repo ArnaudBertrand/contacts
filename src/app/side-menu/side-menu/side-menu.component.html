@@ -1,0 +1,12 @@
+<h2>Menu</h2>
+
+<user-info [user]="user | async"></user-info>
+
+<div class="buttonContainer">
+    <button md-raised-button (click)="logout()" *ngIf="user | async">
+        Logout
+    </button>
+</div>
+
+<a routerLink="/contacts" routerLinkActive="active">Home</a>
+<a routerLink="/contacts/add" routerLinkActive="active">Add</a>

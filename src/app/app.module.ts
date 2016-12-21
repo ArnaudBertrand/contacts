@@ -1,11 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AngularFireModule, AuthMethods, AuthProviders} from 'angularfire2';
+import {MaterialModule} from '@angular/material';
+import {StoreModule} from '@ngrx/store';
 
 import {AppComponent} from './app.component';
 import {CoreModule} from './core.module';
 import {AppRoutingModule} from './app.routing';
-import {MaterialModule} from '@angular/material';
+import {userReducer} from './store/user';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBgY0bNe2BcqCA2HymybVnWmEEo1_w1Dgk",
@@ -17,7 +19,7 @@ const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ const firebaseConfig = {
     }),
     CoreModule,
     AppRoutingModule,
+    StoreModule.provideStore({user: userReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]
